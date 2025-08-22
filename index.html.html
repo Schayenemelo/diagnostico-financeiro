@@ -286,48 +286,47 @@
             cursor: pointer;
             margin: 5px;
             font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .admin-btn:hover {
+            background: #495057;
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 10px;
-            margin-top: 15px;
+            gap: 15px;
+            margin-top: 20px;
         }
 
         .stat-card {
             background: white;
-            padding: 15px;
-            border-radius: 8px;
+            padding: 20px;
+            border-radius: 12px;
             text-align: center;
             border: 1px solid #dee2e6;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
         }
 
         .stat-card h4 {
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-
-        .animal-emoji {
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
-
-        .segment-badge {
-            background: #007bff;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 12px;
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: #52B788;
             font-weight: bold;
-            margin-left: 10px;
         }
 
-        .pf-badge { background: #28a745; }
-        .pj-badge { background: #fd7e14; }
-        .hybrid-badge { background: #6f42c1; }
-        
+        .stat-card small {
+            color: #666;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
         .cta-section {
             background: #e8f5e8;
             padding: 20px;
@@ -347,6 +346,12 @@
             cursor: pointer;
             width: 100%;
             margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: #40916C;
+            transform: translateY(-2px);
         }
 
         .admin-access {
@@ -362,6 +367,7 @@
             border-radius: 8px;
             font-size: 14px;
             background: #f8f9fa;
+            transition: all 0.3s ease;
         }
 
         .admin-access input.admin-valid {
@@ -374,99 +380,68 @@
             font-size: 12px;
         }
 
-        /* Estilos para o relatório melhorado */
-        .report-section {
+        .profile-list {
             background: white;
-            margin: 15px 0;
             padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            border-left: 6px solid #52B788;
+            margin-top: 15px;
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #dee2e6;
         }
 
-        .report-header {
-            background: linear-gradient(135deg, #52B788, #40916C);
-            color: white;
-            padding: 15px 20px;
-            margin: -20px -20px 20px -20px;
-            border-radius: 12px 12px 0 0;
-        }
-
-        .profile-summary {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 15px;
+        .profile-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            margin: 15px 0;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
         }
 
-        .profile-emoji {
-            font-size: 40px;
-            text-align: center;
+        .profile-item:last-child {
+            border-bottom: none;
         }
 
-        .profile-info h4 {
-            margin-bottom: 8px;
+        .profile-name {
+            font-weight: 600;
             color: #2c3e50;
         }
 
-        .characteristics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .characteristic-card {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #52B788;
-        }
-
-        .section-divider {
-            height: 2px;
-            background: linear-gradient(to right, transparent, #52B788, transparent);
-            margin: 25px 0;
-        }
-
-        .steps-container {
-            background: linear-gradient(135deg, #e8f5e8, #d4edda);
-            padding: 20px;
-            border-radius: 12px;
-            margin: 20px 0;
-        }
-
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .step-card {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            border-top: 4px solid #52B788;
-        }
-
-        .step-number {
+        .profile-count {
             background: #52B788;
             color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 10px;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
             font-weight: bold;
+        }
+
+        .section-title {
+            background: #f8f9fa;
+            padding: 10px 15px;
+            margin: 20px -25px;
+            border-left: 4px solid #52B788;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .checkbox-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .checkbox-wrapper input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+            margin-top: 3px;
+        }
+
+        .checkbox-wrapper label {
+            margin-bottom: 0;
+            flex: 1;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -475,7 +450,7 @@
         <div class="header">
             <h1>💸 Diagnóstico Financeiro</h1>
             <p>Descubra a verdade sobre sua vida financeira</p>
-            <small style="opacity: 0.8;">Pessoa Física • Pessoa Jurídica • Empresário</small>
+            <small style="opacity: 0.8;">Pessoa Física • Pessoa Jurídica • Autônomo</small>
         </div>
         
         <div class="content">
@@ -505,7 +480,7 @@
                         <option value="">Selecione seu perfil</option>
                         <option value="PF">🏠 Pessoa Física (CPF)</option>
                         <option value="PJ">🏢 Pessoa Jurídica (CNPJ)</option>
-                        <option value="HYBRID">👨‍💼 Empresário/Profissional Liberal (ambos)</option>
+                        <option value="AUTONOMO">👨‍💼 Autônomo/Profissional Liberal</option>
                     </select>
                 </div>
                 
@@ -513,11 +488,13 @@
                     <label for="age">Idade*</label>
                     <select id="age" required>
                         <option value="">Selecione</option>
-                        <option value="18-25">18-25 anos</option>
-                        <option value="26-35">26-35 anos</option>
-                        <option value="36-45">36-45 anos</option>
-                        <option value="46-55">46-55 anos</option>
-                        <option value="55+">Mais de 55 anos</option>
+                        <option value="<18">Menor de 18</option>
+                        <option value="18-24">18-24 anos</option>
+                        <option value="25-34">25-34 anos</option>
+                        <option value="35-44">35-44 anos</option>
+                        <option value="45-54">45-54 anos</option>
+                        <option value="55-64">55-64 anos</option>
+                        <option value="65+">65+ anos</option>
                     </select>
                 </div>
                 
@@ -525,6 +502,23 @@
                     <label for="income" id="incomeLabel">Renda Mensal*</label>
                     <select id="income" required>
                         <option value="">Selecione</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="authorization" required>
+                        <label for="authorization">Autorizo o envio do meu diagnóstico PARA A PRÓSPERA CONSULTORIA FINANCEIRA*</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="followUp">Preferência de follow-up (opcional)</label>
+                    <select id="followUp">
+                        <option value="">Selecione</option>
+                        <option value="WhatsApp">WhatsApp</option>
+                        <option value="E-mail">E-mail</option>
+                        <option value="Ligação">Ligação</option>
                     </select>
                 </div>
                 
@@ -543,7 +537,7 @@
                 <div class="progress">
                     <div class="progress-bar" id="progressBar"></div>
                 </div>
-                <div class="progress-text" id="progressText">Pergunta 1 de 10</div>
+                <div class="progress-text" id="progressText">Pergunta 1 de 15</div>
                 
                 <div id="questionsContainer"></div>
                 
@@ -575,353 +569,242 @@
     </div>
 
     <script>
-        // Base de dados local - usar sessionStorage em vez de localStorage para evitar erros
+        // Base de dados local
         let diagnosticData = [];
-        try {
-            const storedData = localStorage.getItem('diagnosticData');
-            if (storedData) {
-                diagnosticData = JSON.parse(storedData);
+        
+        // Função segura para carregar dados
+        function loadData() {
+            try {
+                const storedData = localStorage.getItem('diagnosticData');
+                if (storedData) {
+                    diagnosticData = JSON.parse(storedData);
+                }
+            } catch (e) {
+                console.log('localStorage indisponível, usando memória local');
+                diagnosticData = [];
             }
-        } catch (e) {
-            console.log('Erro ao carregar dados:', e);
-            diagnosticData = [];
         }
+
+        // Função segura para salvar dados
+        function saveData() {
+            try {
+                localStorage.setItem('diagnosticData', JSON.stringify(diagnosticData));
+            } catch (e) {
+                console.log('localStorage indisponível, dados mantidos em memória');
+            }
+        }
+
+        // Inicializar dados
+        loadData();
         
         let currentSegment = '';
         let currentQuestionIndex = 0;
         let userAnswers = [];
         let currentUser = {};
 
-        // Perguntas adaptadas para PF e PJ
+        // Perguntas estruturadas
         const questions = [
+            // BLOCO A - Situação Financeira
             {
+                section: "BLOCO A - Situação Financeira",
+                question: "A1. Quantos meses de reserva financeira você tem hoje?",
+                options: [
+                    { text: "0 meses", points: 3 },
+                    { text: "Meio mês (≈15 dias)", points: 2 },
+                    { text: "1 mês", points: 2 },
+                    { text: "3 meses", points: 1 },
+                    { text: "6 meses ou mais", points: 0 }
+                ]
+            },
+            {
+                section: "BLOCO A - Situação Financeira",
+                question: "A2. Quanto da sua renda/faturamento está comprometido com dívidas/parcelas?",
+                options: [
+                    { text: "0-25%", points: 0 },
+                    { text: "26-50%", points: 1 },
+                    { text: "51-75%", points: 2 },
+                    { text: "76% ou mais", points: 3 }
+                ]
+            },
+            {
+                section: "BLOCO A - Situação Financeira",
+                question: "A3. Você tem parcelas em cartão com juros rotativos (que 'giram' todo mês)?",
+                options: [
+                    { text: "Sim - muitas", points: 3 },
+                    { text: "Sim - poucas", points: 1 },
+                    { text: "Não", points: 0 }
+                ]
+            },
+            {
+                section: "BLOCO A - Situação Financeira",
+                question: "A4. Nos últimos 12 meses, por falta de caixa você precisou usar crédito (empréstimo/cartão)?",
+                options: [
+                    { text: "Sim - várias vezes", points: 3 },
+                    { text: "Sim - 1 ou 2 vezes", points: 1 },
+                    { text: "Não", points: 0 }
+                ]
+            },
+            {
+                section: "BLOCO A - Situação Financeira",
                 question: {
-                    PF: "Como você descreveria sua situação atual com dívidas?",
-                    PJ: "Como está a situação financeira da sua empresa com fornecedores e empréstimos?",
-                    HYBRID: "Como está sua situação com dívidas pessoais e empresariais?"
+                    PF: "A5. Você depende financeiramente de outra pessoa (parceiro/família) para pagar contas?",
+                    PJ: "A5. Ciclo de recebimento do negócio:",
+                    AUTONOMO: "A5. Entrada de renda é previsível?"
                 },
                 options: {
                     PF: [
-                        { text: "Impossível, vivo pagando dívidas", profile: 1 },
-                        { text: "Trabalho só para pagar contas", profile: 2 },
-                        { text: "Dependo de família/parceiro para algumas coisas", profile: 7 },
-                        { text: "Nunca parei para pensar nisso", profile: 4 },
-                        { text: "Se parar de trabalhar, não aguento nem 6 meses", profile: 6 }
+                        { text: "Sim", points: 2 },
+                        { text: "Parcialmente", points: 1 },
+                        { text: "Não", points: 0 }
                     ],
                     PJ: [
-                        { text: "Impossível, empresa vive pagando dívidas", profile: 1 },
-                        { text: "Empresa só funciona para pagar custos", profile: 2 },
-                        { text: "Dependo de sócios/família para capital", profile: 7 },
-                        { text: "Nunca pensei em sustentabilidade", profile: 4 },
-                        { text: "Se parar de faturar, empresa quebra em meses", profile: 6 }
+                        { text: "Recebo à vista", points: 0 },
+                        { text: "Mensal previsível", points: 0 },
+                        { text: "Recebo parcelado (30/60/90)", points: 1 },
+                        { text: "Recebo irregular", points: 2 }
                     ],
-                    HYBRID: [
-                        { text: "Impossível dos dois lados, só pago dívidas", profile: 1 },
-                        { text: "Trabalho só para cobrir custos PF e PJ", profile: 2 },
-                        { text: "Dependo de outros para ambos os lados", profile: 7 },
-                        { text: "Nunca pensei numa estratégia integrada", profile: 4 },
-                        { text: "Se parar, colapsa tudo em poucos meses", profile: 6 }
+                    AUTONOMO: [
+                        { text: "Sim", points: 0 },
+                        { text: "Parcialmente", points: 1 },
+                        { text: "Não", points: 2 }
                     ]
                 }
             },
+
+            // BLOCO B - Hábitos Financeiros
             {
-                question: {
-                    PF: "O que acontece quando você recebe seu salário?",
-                    PJ: "O que acontece quando a empresa fatura?",
-                    HYBRID: "Como você administra receitas pessoais e empresariais?"
-                },
-                options: {
-                    PF: [
-                        { text: "A maior parte vai para pagar juros e parcelas", profile: 1 },
-                        { text: "Pago as contas e sobra muito pouco ou nada", profile: 2 },
-                        { text: "Aproveito para comprar algumas coisas que queria", profile: 3 },
-                        { text: "Deixo na conta e vou gastando conforme preciso", profile: 4 },
-                        { text: "Guardo na poupança, mas não sei o que fazer depois", profile: 8 }
-                    ],
-                    PJ: [
-                        { text: "A maior parte vai para pagar fornecedores e empréstimos", profile: 1 },
-                        { text: "Cobre custos operacionais e sobra pouco", profile: 2 },
-                        { text: "Aproveito para investir em melhorias na empresa", profile: 3 },
-                        { text: "Deixo na conta corrente empresarial", profile: 4 },
-                        { text: "Fica na conta empresa, sem aplicação", profile: 8 }
-                    ],
-                    HYBRID: [
-                        { text: "Tudo vai para pagar contas pessoais e empresariais", profile: 1 },
-                        { text: "Cobre gastos básicos de ambos os lados", profile: 2 },
-                        { text: "Invisto hora na empresa, hora em gastos pessoais", profile: 3 },
-                        { text: "Deixo misturado, sem separar PF de PJ", profile: 4 },
-                        { text: "Guardo sem estratégia clara", profile: 8 }
-                    ]
-                }
+                section: "BLOCO B - Hábitos Financeiros",
+                question: "B1. Faço compras por impulso (compras sem planejar).",
+                options: [
+                    { text: "Nunca", points: 0 },
+                    { text: "Às vezes", points: 1 },
+                    { text: "Frequentemente", points: 2 },
+                    { text: "Sempre", points: 3 }
+                ]
             },
             {
-                question: {
-                    PF: "Se você perdesse sua renda hoje, por quanto tempo conseguiria se manter?",
-                    PJ: "Se a empresa parasse de faturar hoje, por quanto tempo se manteria?",
-                    HYBRID: "Se perdesse todas as receitas hoje, quanto tempo se manteria?"
-                },
-                options: {
-                    PF: [
-                        { text: "Nem 1 mês, já estou no vermelho", profile: 1 },
-                        { text: "No máximo 1 mês", profile: 2 },
-                        { text: "Alguns meses, mas teria que mudar muito meu padrão", profile: 6 },
-                        { text: "Não sei, nunca calculei", profile: 4 },
-                        { text: "Tenho reserva, mas só na poupança", profile: 5 }
-                    ],
-                    PJ: [
-                        { text: "Nem 1 mês, empresa já está no vermelho", profile: 1 },
-                        { text: "No máximo 1 mês de operação", profile: 2 },
-                        { text: "Alguns meses, mas teria que cortar muito", profile: 6 },
-                        { text: "Não sei, nunca calculei reservas da empresa", profile: 4 },
-                        { text: "Empresa tem caixa, mas mal aplicado", profile: 5 }
-                    ],
-                    HYBRID: [
-                        { text: "Nem 1 mês em nenhum dos lados", profile: 1 },
-                        { text: "No máximo 1 mês total", profile: 2 },
-                        { text: "Alguns meses mas com grandes cortes", profile: 6 },
-                        { text: "Nunca calculei reservas integradas", profile: 4 },
-                        { text: "Tenho reservas mas desorganizadas", profile: 5 }
-                    ]
-                }
+                section: "BLOCO B - Hábitos Financeiros",
+                question: "B2. Evito abrir faturas, extratos ou analisar minhas contas.",
+                options: [
+                    { text: "Nunca", points: 0 },
+                    { text: "Às vezes", points: 1 },
+                    { text: "Frequentemente", points: 2 },
+                    { text: "Sempre", points: 3 }
+                ]
             },
             {
-                question: {
-                    PF: "Como você se sente em relação a investimentos pessoais?",
-                    PJ: "Como a empresa trata reservas e investimentos?",
-                    HYBRID: "Como você encara investimentos pessoais e empresariais?"
-                },
-                options: {
-                    PF: [
-                        { text: "Não tenho dinheiro nem para pensar nisso", profile: 1 },
-                        { text: "Gostaria de investir, mas não sobra nada", profile: 2 },
-                        { text: "Prefiro gastar com coisas que me fazem feliz agora", profile: 3 },
-                        { text: "Tenho medo de perder dinheiro", profile: 5 },
-                        { text: "Tenho dinheiro mas fico paralisado sem saber onde aplicar", profile: 8 }
-                    ],
-                    PJ: [
-                        { text: "A empresa não tem recursos para investir", profile: 1 },
-                        { text: "Gostaria de formar reservas, mas não sobra", profile: 2 },
-                        { text: "Prefiro reinvestir em crescimento da empresa", profile: 3 },
-                        { text: "Tenho medo de aplicações arriscadas", profile: 5 },
-                        { text: "Empresa tem dinheiro mas sem estratégia de aplicação", profile: 8 }
-                    ],
-                    HYBRID: [
-                        { text: "Nem PF nem PJ tem dinheiro para investir", profile: 1 },
-                        { text: "Quero investir mas não sobra de nenhum lado", profile: 2 },
-                        { text: "Foco só no crescimento do negócio", profile: 3 },
-                        { text: "Medo de perder tanto pessoal quanto empresarial", profile: 5 },
-                        { text: "Tenho recursos mas sem estratégia clara", profile: 8 }
-                    ]
-                }
+                section: "BLOCO B - Hábitos Financeiros",
+                question: "B3. Tenho o hábito de guardar automaticamente parte da renda (transferência/depósito programado).",
+                options: [
+                    { text: "Sempre", points: 0 },
+                    { text: "Frequentemente", points: 1 },
+                    { text: "Às vezes", points: 2 },
+                    { text: "Nunca", points: 3 }
+                ]
             },
             {
+                section: "BLOCO B - Hábitos Financeiros",
                 question: {
-                    PF: "Sua maior dor financeira pessoal hoje é:",
-                    PJ: "A maior dor financeira da empresa hoje é:",
-                    HYBRID: "Sua maior dor financeira integrada é:"
+                    PF: "B4. Misturo contas pessoais e do negócio (não separo PF/PJ).",
+                    PJ: "B4. Misturo contas pessoais e empresariais (não separo PF/PJ).",
+                    AUTONOMO: "B4. Misturo contas pessoais e profissionais."
                 },
-                options: {
-                    PF: [
-                        { text: "Os juros que consomem minha renda todo mês", profile: 1 },
-                        { text: "Viver sempre na corda bamba, sem segurança", profile: 2 },
-                        { text: "Me arrepender das compras e não conseguir parar", profile: 3 },
-                        { text: "A ansiedade de não saber minha real situação", profile: 4 },
-                        { text: "Ver meu dinheiro parado perdendo para a inflação", profile: 5 }
-                    ],
-                    PJ: [
-                        { text: "Juros e custos financeiros consomem o faturamento", profile: 1 },
-                        { text: "Fluxo de caixa sempre no limite", profile: 2 },
-                        { text: "Investimentos impulsivos que não dão retorno", profile: 3 },
-                        { text: "Não saber a real situação financeira da empresa", profile: 4 },
-                        { text: "Dinheiro da empresa parado rendendo pouco", profile: 5 }
-                    ],
-                    HYBRID: [
-                        { text: "Juros de todos os lados consumindo tudo", profile: 1 },
-                        { text: "Viver no limite tanto pessoal quanto empresarial", profile: 2 },
-                        { text: "Decisões impulsivas que prejudicam ambos", profile: 3 },
-                        { text: "Ansiedade por não ter controle de nada", profile: 4 },
-                        { text: "Recursos mal aplicados dos dois lados", profile: 5 }
-                    ]
-                }
+                options: [
+                    { text: "Nunca", points: 0 },
+                    { text: "Às vezes", points: 1 },
+                    { text: "Frequentemente", points: 2 },
+                    { text: "Sempre", points: 3 }
+                ]
             },
             {
-                question: {
-                    PF: "Qual sua reação diante de uma emergência financeira (R$ 5.000)?",
-                    PJ: "Como a empresa reagiria a uma necessidade urgente de capital (R$ 15.000)?",
-                    HYBRID: "Como você lidaria com emergências pessoais ou empresariais?"
-                },
-                options: {
-                    PF: [
-                        { text: "Teria que parcelar no cartão ou pegar empréstimo", profile: 1 },
-                        { text: "Seria um desastre total, não tenho reserva", profile: 2 },
-                        { text: "Comprometeria meus planos de compras", profile: 3 },
-                        { text: "Nem sei quanto tenho disponível", profile: 4 },
-                        { text: "Tenho o dinheiro, mas na poupança rendendo pouco", profile: 5 }
-                    ],
-                    PJ: [
-                        { text: "Empresa teria que recorrer a empréstimos caros", profile: 1 },
-                        { text: "Seria catastrófico, sem reserva de emergência", profile: 2 },
-                        { text: "Comprometeria investimentos planejados", profile: 3 },
-                        { text: "Não sei exatamente quanto a empresa tem disponível", profile: 4 },
-                        { text: "Empresa tem dinheiro, mas mal aplicado", profile: 5 }
-                    ],
-                    HYBRID: [
-                        { text: "Teria que misturar recursos ou se endividar", profile: 1 },
-                        { text: "Seria caótico tanto pessoal quanto empresarial", profile: 2 },
-                        { text: "Atrapalharia planos de ambos os lados", profile: 3 },
-                        { text: "Não tenho controle claro dos dois lados", profile: 4 },
-                        { text: "Tenho recursos mas desorganizados", profile: 5 }
-                    ]
-                }
+                section: "BLOCO B - Hábitos Financeiros",
+                question: "B5. Tenho metas financeiras claras (curto/médio/longo) e acompanho elas.",
+                options: [
+                    { text: "Sempre", points: 0 },
+                    { text: "Frequentemente", points: 1 },
+                    { text: "Às vezes", points: 2 },
+                    { text: "Nunca", points: 3 }
+                ]
             },
             {
-                question: {
-                    PF: "Em relação ao seu futuro financeiro:",
-                    PJ: "Em relação ao futuro da empresa:",
-                    HYBRID: "Seu futuro financeiro integrado:"
-                },
-                options: {
-                    PF: [
-                        { text: "Só consigo pensar em sobreviver ao próximo mês", profile: 1 },
-                        { text: "Planejo aposentadoria mas não consigo poupar", profile: 2 },
-                        { text: "Quero liberdade para aproveitar a vida", profile: 3 },
-                        { text: "Evito pensar no futuro financeiro", profile: 4 },
-                        { text: "Quero multiplicar meu patrimônio", profile: 6 }
-                    ],
-                    PJ: [
-                        { text: "Só penso em manter a empresa funcionando", profile: 1 },
-                        { text: "Quero expansão mas não consigo investir", profile: 2 },
-                        { text: "Busco crescimento e mais market share", profile: 3 },
-                        { text: "Evito planejar o futuro empresarial", profile: 4 },
-                        { text: "Quero multiplicar o valor da empresa", profile: 6 }
-                    ],
-                    HYBRID: [
-                        { text: "Só consigo manter tudo funcionando", profile: 1 },
-                        { text: "Quero crescer mas não tenho recursos", profile: 2 },
-                        { text: "Busco liberdade pessoal e empresarial", profile: 3 },
-                        { text: "Evito planejar qualquer futuro", profile: 4 },
-                        { text: "Quero multiplicar patrimônio total", profile: 6 }
-                    ]
-                }
+                section: "BLOCO B - Hábitos Financeiros",
+                question: "B6. Sinto medo de investir e deixo dinheiro parado por insegurança.",
+                options: [
+                    { text: "Nunca", points: 0 },
+                    { text: "Às vezes", points: 1 },
+                    { text: "Frequentemente", points: 2 },
+                    { text: "Sempre", points: 3 }
+                ]
             },
             {
-                question: {
-                    PF: "Suas compras pessoais são motivadas por:",
-                    PJ: "Os investimentos da empresa são motivados por:",
-                    HYBRID: "Suas decisões de gastos (PF/PJ) são motivadas por:"
-                },
-                options: {
-                    PF: [
-                        { text: "Necessidade básica (mal consigo pagar o essencial)", profile: 1 },
-                        { text: "Necessidade real, mas sem folga", profile: 2 },
-                        { text: "Impulso emocional e desejo de status", profile: 3 },
-                        { text: "Não planejo, compro conforme aparece", profile: 4 },
-                        { text: "Status profissional e aparência de sucesso", profile: 9 }
-                    ],
-                    PJ: [
-                        { text: "Necessidade operacional básica", profile: 1 },
-                        { text: "Necessidades reais mas orçamento apertado", profile: 2 },
-                        { text: "Impulso de crescimento e impressionar clientes", profile: 3 },
-                        { text: "Não planejo, compro conforme surge demanda", profile: 4 },
-                        { text: "Status empresarial e imagem de sucesso", profile: 9 }
-                    ],
-                    HYBRID: [
-                        { text: "Necessidades básicas de ambos os lados", profile: 1 },
-                        { text: "Necessidades reais mas sem folga", profile: 2 },
-                        { text: "Impulso e status tanto pessoal quanto empresarial", profile: 3 },
-                        { text: "Não planejo, decido conforme aparece", profile: 4 },
-                        { text: "Status e aparência de sucesso em ambos", profile: 9 }
-                    ]
-                }
+                section: "BLOCO B - Hábitos Financeiros",
+                question: "B7. Dependo quase 100% do meu trabalho para sobreviver financeiramente.",
+                options: [
+                    { text: "Nunca", points: 0 },
+                    { text: "Às vezes", points: 1 },
+                    { text: "Frequentemente", points: 2 },
+                    { text: "Sempre", points: 3 }
+                ]
+            },
+
+            // BLOCO C - Mindset e Travas
+            {
+                section: "BLOCO C - Mindset e Travas",
+                question: "C1. Sinto que 'dinheiro não é para pessoas como eu' / tenho baixa confiança.",
+                options: [
+                    { text: "Nunca", points: 0 },
+                    { text: "Às vezes", points: 1 },
+                    { text: "Frequentemente", points: 2 },
+                    { text: "Sempre", points: 3 }
+                ]
             },
             {
-                question: {
-                    PF: "Sobre sua independência financeira:",
-                    PJ: "Sobre a sustentabilidade da empresa:",
-                    HYBRID: "Sobre sua independência financeira total:"
-                },
-                options: {
-                    PF: [
-                        { text: "Estou completamente dependente do salário", profile: 2 },
-                        { text: "Preciso da ajuda de outros para me sustentar", profile: 7 },
-                        { text: "Tenho renda, mas sem reservas para emergências", profile: 6 },
-                        { text: "Não sei calcular minha independência", profile: 4 },
-                        { text: "Tenho dinheiro mas não sei multiplicar", profile: 8 }
-                    ],
-                    PJ: [
-                        { text: "Empresa depende 100% do faturamento mensal", profile: 2 },
-                        { text: "Preciso de sócios/investidores para manter", profile: 7 },
-                        { text: "Faturamos bem mas sem reservas", profile: 6 },
-                        { text: "Não sei calcular sustentabilidade real", profile: 4 },
-                        { text: "Empresa tem recursos mas não cresce", profile: 8 }
-                    ],
-                    HYBRID: [
-                        { text: "Dependente total das receitas mensais", profile: 2 },
-                        { text: "Preciso de ajuda nos dois lados", profile: 7 },
-                        { text: "Receitas boas mas sem reservas", profile: 6 },
-                        { text: "Não sei minha real independência", profile: 4 },
-                        { text: "Recursos disponíveis mas sem crescimento", profile: 8 }
-                    ]
-                }
+                section: "BLOCO C - Mindset e Travas",
+                question: "C2. Tenho vergonha de falar sobre minhas dívidas.",
+                options: [
+                    { text: "Nunca", points: 0 },
+                    { text: "Às vezes", points: 1 },
+                    { text: "Frequentemente", points: 2 },
+                    { text: "Sempre", points: 3 }
+                ]
             },
             {
-                question: {
-                    PF: "Como você descreveria seu nível de controle financeiro?",
-                    PJ: "Como descreveria o controle financeiro da empresa?",
-                    HYBRID: "Seu controle financeiro integrado (PF/PJ) é:"
-                },
-                options: {
-                    PF: [
-                        { text: "Perdido completamente, não sei mais o que devo", profile: 1 },
-                        { text: "Tento controlar mas sempre estoura o orçamento", profile: 2 },
-                        { text: "Controlo pouco, sou muito impulsivo", profile: 3 },
-                        { text: "Evito olhar minha situação real", profile: 4 },
-                        { text: "Organizado mas sem objetivos claros", profile: 10 }
-                    ],
-                    PJ: [
-                        { text: "Perdemos controle do fluxo de caixa", profile: 1 },
-                        { text: "Tentamos controlar mas sempre estoura", profile: 2 },
-                        { text: "Pouco controle, investimos por impulso", profile: 3 },
-                        { text: "Evitamos análises profundas", profile: 4 },
-                        { text: "Bem organizado mas sem estratégia", profile: 10 }
-                    ],
-                    HYBRID: [
-                        { text: "Controle perdido nos dois lados", profile: 1 },
-                        { text: "Tento mas sempre extrapolo", profile: 2 },
-                        { text: "Pouco controle, muito impulso", profile: 3 },
-                        { text: "Evito análise profunda de ambos", profile: 4 },
-                        { text: "Organizado mas sem integração estratégica", profile: 10 }
-                    ]
-                }
+                section: "BLOCO C - Mindset e Travas",
+                question: "C3. Tenho pouco tempo para cuidar das finanças (muito ocupado).",
+                options: [
+                    { text: "Nunca", points: 0 },
+                    { text: "Às vezes", points: 1 },
+                    { text: "Frequentemente", points: 2 },
+                    { text: "Sempre", points: 3 }
+                ]
             }
         ];
 
         // Perfis completos
         const profiles = {
             1: {
-                title: "🌀 CARACOL ENDIVIDADO",
-                emoji: "🌀",
+                title: "🐌 CARACOL ENDIVIDADO",
+                emoji: "🐌",
                 subtitle: {
                     PF: "Você está sufocando em dívidas pessoais",
                     PJ: "Sua empresa está sufocando em dívidas",
-                    HYBRID: "Você está sufocando em dívidas pessoais e empresariais"
+                    AUTONOMO: "Você está sufocando em dívidas profissionais"
                 },
                 description: {
                     PF: "Você vive em um ciclo vicioso de dívidas que consome sua renda todos os meses. Os juros do cartão, cheque especial e empréstimos são como sanguessugas sugando seu dinheiro.",
                     PJ: "Sua empresa vive em um ciclo vicioso de dívidas que consome todo o faturamento. Juros bancários, fornecedores em atraso e custos financeiros drenam o caixa empresarial.",
-                    HYBRID: "Você vive um duplo ciclo vicioso: dívidas pessoais E empresariais que se retroalimentam, consumindo recursos dos dois lados."
+                    AUTONOMO: "Você vive um ciclo vicioso de dívidas profissionais e pessoais que se misturam, consumindo recursos dos dois lados."
                 },
                 pain: {
                     PF: "A cada mês, você trabalha apenas para enriquecer os bancos. Seus juros consomem até 40% da sua renda. Você sente que JAMAIS conseguirá 'começar do zero' e que está condenado a essa vida de devedor eterno.",
                     PJ: "A cada mês, sua empresa trabalha apenas para pagar juros bancários. Os custos financeiros consomem até 30% do faturamento. A empresa nunca consegue formar caixa para crescer.",
-                    HYBRID: "Você trabalha só para alimentar um monstro de duas cabeças: dívidas pessoais E empresariais que se multiplicam. Vive uma dupla prisão financeira."
+                    AUTONOMO: "Você trabalha só para alimentar um ciclo de dívidas que se retroalimentam entre vida pessoal e profissional. Vive uma dupla prisão financeira."
                 },
                 solution: {
-                    PF: "Precisa de um plano de amortização estratégico para sair do vermelho e recuperar sua dignidade financeira. Reorganização de dívidas, negociação de juros e criação de um orçamento realista são fundamentais.",
-                    PJ: "Necessita de reestruturação empresarial completa: renegociação com fornecedores, otimização do fluxo de caixa e criação de reservas de emergência para voltar a crescer.",
-                    HYBRID: "Requer um plano integrado de recuperação que alinhe estratégias pessoais e empresariais, criando sinergias entre os dois lados para acelerar a saída do vermelho."
-                },
-                steps: ["Auditoria completa das dívidas", "Renegociação estratégica", "Plano de amortização", "Criação de reserva emergencial"]
+                    PF: "A Próspera pode criar um plano de amortização estratégico para você sair do vermelho e recuperar sua dignidade financeira.",
+                    PJ: "A Próspera pode criar um plano de reestruturação empresarial para sua empresa sair do vermelho e voltar a crescer.",
+                    AUTONOMO: "A Próspera pode criar um plano integrado de recuperação financeira pessoal e profissional simultaneamente."
+                }
             },
             2: {
                 title: "🐹 HAMSTER NA RODA",
@@ -929,24 +812,23 @@
                 subtitle: {
                     PF: "Você vive de salário em salário sem folga",
                     PJ: "Empresa vive de faturamento em faturamento",
-                    HYBRID: "Você vive de receita em receita nos dois lados"
+                    AUTONOMO: "Você vive de receita em receita sem reservas"
                 },
                 description: {
                     PF: "Todo mês é a mesma história: recebe, paga contas, e sobra quase nada. Qualquer imprevisto vira pesadelo e mais dívida.",
                     PJ: "Todo mês é igual: fatura, paga custos operacionais, e sobra pouco ou nada. Qualquer problema vira crise de caixa.",
-                    HYBRID: "Você vive uma dupla corrida: receitas pessoais E empresariais que mal cobrem os custos de ambos os lados."
+                    AUTONOMO: "Você vive uma corrida constante: receitas que mal cobrem os custos pessoais e profissionais."
                 },
                 pain: {
                     PF: "Você vive com ZERO segurança financeira. Uma consulta médica, um pneu furado, um eletrodoméstico quebrado e pronto: você está no vermelho.",
                     PJ: "Sua empresa vive com ZERO reserva. Um cliente inadimplente, um equipamento quebrado, uma multa fiscal e pronto: crise de caixa.",
-                    HYBRID: "Você vive em dupla insegurança: qualquer problema pessoal OU empresarial pode derrubar tudo como um castelo de cartas."
+                    AUTONOMO: "Você vive em constante insegurança: qualquer problema pessoal OU profissional pode derrubar tudo como um castelo de cartas."
                 },
                 solution: {
-                    PF: "Precisa quebrar o ciclo vicioso criando uma almofada financeira. Otimização de gastos, aumento de renda e formação gradual de reservas são essenciais.",
-                    PJ: "Necessita de um sistema robusto de gestão de fluxo de caixa, diversificação de receitas e formação de capital de giro para estabilidade.",
-                    HYBRID: "Requer integração inteligente das finanças pessoais e empresariais, criando múltiplas fontes de segurança e estabilidade."
-                },
-                steps: ["Mapeamento de gastos", "Criação de orçamento", "Formação de reserva", "Diversificação de receitas"]
+                    PF: "A Próspera vai te ensinar a quebrar esse ciclo vicioso e criar uma almofada financeira que te dará segurança real.",
+                    PJ: "A Próspera pode criar um sistema de gestão de fluxo de caixa que dará estabilidade e crescimento à sua empresa.",
+                    AUTONOMO: "A Próspera pode integrar suas finanças pessoais e profissionais criando segurança duradoura nos dois lados."
+                }
             },
             3: {
                 title: "🐒 MACAQUINHO IMPULSIVO",
@@ -954,24 +836,23 @@
                 subtitle: {
                     PF: "Suas emoções controlam seu dinheiro",
                     PJ: "Decisões empresariais por impulso",
-                    HYBRID: "Impulsividade financeira total"
+                    AUTONOMO: "Impulsividade financeira total"
                 },
                 description: {
                     PF: "Você compra para se sentir bem, para impressionar, para compensar frustrações. Suas compras são movidas por impulso e busca de status.",
                     PJ: "Sua empresa investe por impulso: equipamentos caros, expansões sem planejamento, gastos para impressionar clientes.",
-                    HYBRID: "Você é impulsivo nos dois lados: gastos pessoais descontrolados E investimentos empresariais sem critério."
+                    AUTONOMO: "Você é impulsivo nos dois lados: gastos pessoais descontrolados E investimentos profissionais sem critério."
                 },
                 pain: {
                     PF: "Você sente uma culpa CONSTANTE após as compras. Seu cartão está sempre no limite, você mente sobre gastos para família/parceiro.",
                     PJ: "Você se arrepende de investimentos empresariais constantes. A empresa gasta em status mas não em resultados efetivos.",
-                    HYBRID: "Duplo arrependimento: gastos pessoais E empresariais que drenam recursos sem gerar valor real."
+                    AUTONOMO: "Duplo arrependimento: gastos pessoais E profissionais que drenam recursos sem gerar valor real."
                 },
                 solution: {
-                    PF: "Necessita de controle emocional sobre o dinheiro e redirecionamento da energia para investimentos que geram retorno real ao invés de satisfação momentânea.",
-                    PJ: "Precisa de critérios objetivos para investimentos empresariais baseados em ROI mensurável e planejamento estratégico.",
-                    HYBRID: "Requer desenvolvimento de disciplina financeira integrada com foco em resultados ao invés de impulsos emocionais."
-                },
-                steps: ["Identificação de gatilhos", "Criação de critérios objetivos", "Pausa obrigatória nas decisões", "Foco em ROI real"]
+                    PF: "A Próspera pode te dar controle emocional sobre o dinheiro e mostrar como investir em vez de gastar compulsivamente.",
+                    PJ: "A Próspera pode criar critérios objetivos para investimentos empresariais baseados em ROI real.",
+                    AUTONOMO: "A Próspera pode integrar controle emocional com critérios racionais para decisões pessoais e profissionais."
+                }
             },
             4: {
                 title: "🐈 GATO DOMÉSTICO",
@@ -979,24 +860,23 @@
                 subtitle: {
                     PF: "Você foge da própria realidade financeira",
                     PJ: "Você foge da realidade financeira da empresa",
-                    HYBRID: "Você foge de toda realidade financeira"
+                    AUTONOMO: "Você foge de toda realidade financeira"
                 },
                 description: {
                     PF: "Você evita abrir extratos, não organiza documentos, não enfrenta sua situação financeira. Prefere não saber a verdade.",
                     PJ: "Você evita relatórios financeiros, não acompanha indicadores, deixa tudo para o contador. Prefere não saber a real situação.",
-                    HYBRID: "Você foge tanto das finanças pessoais quanto empresariais. Vive numa bolha de ignorância financeira dupla."
+                    AUTONOMO: "Você foge tanto das finanças pessoais quanto profissionais. Vive numa bolha de ignorância financeira dupla."
                 },
                 pain: {
                     PF: "Você vive na ansiedade CONSTANTE do desconhecido. Multas por atraso, surpresas desagradáveis, decisões sempre em cima da hora.",
                     PJ: "Ansiedade constante sobre a real situação da empresa. Surpresas fiscais, problemas de fluxo descobertos tarde demais.",
-                    HYBRID: "Dupla ansiedade: você não sabe nem como está pessoalmente nem empresarialmente. Vive dirigindo de olhos fechados nos dois lados."
+                    AUTONOMO: "Dupla ansiedade: você não sabe nem como está pessoalmente nem profissionalmente. Vive dirigindo de olhos fechados nos dois lados."
                 },
                 solution: {
-                    PF: "Precisa de um sistema organizado e rotinas simples que transformem o caos em controle financeiro gradual e sustentável.",
-                    PJ: "Necessita de dashboards simples e rotinas de acompanhamento que deem visibilidade clara da saúde empresarial.",
-                    HYBRID: "Requer um sistema integrado de controle que organize e monitore tanto finanças pessoais quanto empresariais de forma unificada."
-                },
-                steps: ["Organização de documentos", "Criação de rotinas simples", "Dashboards visuais", "Acompanhamento regular"]
+                    PF: "A Próspera vai te dar um sistema organizado e rotinas que transformam caos em controle financeiro.",
+                    PJ: "A Próspera pode criar dashboards simples e rotinas de acompanhamento que dão visibilidade empresarial.",
+                    AUTONOMO: "A Próspera pode criar um sistema integrado que organiza e controla tanto suas finanças pessoais quanto profissionais."
+                }
             },
             5: {
                 title: "🐢 TARTARUGA CONSERVADORA",
@@ -1004,24 +884,23 @@
                 subtitle: {
                     PF: "Você está perdendo dinheiro 'guardando' dinheiro",
                     PJ: "Empresa perde dinheiro com excesso de conservadorismo",
-                    HYBRID: "Conservadorismo excessivo nos dois lados"
+                    AUTONOMO: "Conservadorismo excessivo nos dois lados"
                 },
                 description: {
                     PF: "Você tem o hábito de guardar, mas deixa tudo na poupança ou renda fixa muito conservadora. Tem pavor de 'perder' dinheiro investindo.",
                     PJ: "A empresa guarda recursos mas em aplicações muito conservadoras. Perde oportunidades de crescimento por excesso de cautela.",
-                    HYBRID: "Você é ultraconservador nos dois lados: dinheiro pessoal E empresarial rendendo abaixo do potencial."
+                    AUTONOMO: "Você é ultraconservador nos dois lados: dinheiro pessoal E profissional rendendo abaixo do potencial."
                 },
                 pain: {
                     PF: "Você está PERDENDO DINHEIRO todos os meses para a inflação. Seu poder de compra diminui constantemente.",
                     PJ: "A empresa perde competitividade por não investir em crescimento. Concorrentes crescem enquanto vocês estagnam.",
-                    HYBRID: "Dupla perda: patrimônio pessoal E empresarial corroídos pela inflação e falta de ousadia controlada."
+                    AUTONOMO: "Dupla perda: recursos pessoais E profissionais corroídos pela inflação e falta de ousadia."
                 },
                 solution: {
-                    PF: "Precisa de educação financeira para investimentos seguros mas rentáveis, saindo gradualmente da paralisia do medo excessivo.",
-                    PJ: "Necessita de estratégia de crescimento controlado que combine segurança com rentabilidade empresarial adequada.",
-                    HYBRID: "Requer balanceamento inteligente entre conservadorismo e crescimento tanto pessoal quanto empresarial."
-                },
-                steps: ["Educação sobre risco x retorno", "Diversificação gradual", "Metas de rentabilidade", "Crescimento controlado"]
+                    PF: "A Próspera pode te mostrar investimentos seguros mas rentáveis, saindo da paralisia do medo.",
+                    PJ: "A Próspera pode criar uma estratégia de crescimento controlado que alie segurança com rentabilidade empresarial.",
+                    AUTONOMO: "A Próspera pode balancear conservadorismo com crescimento tanto pessoal quanto profissional."
+                }
             },
             6: {
                 title: "🐎 CAVALO DE CORRIDA",
@@ -1029,24 +908,23 @@
                 subtitle: {
                     PF: "Alta renda, baixa inteligência financeira",
                     PJ: "Alto faturamento, baixa rentabilidade",
-                    HYBRID: "Alta receita, baixa acumulação patrimonial"
+                    AUTONOMO: "Alta receita, baixa acumulação patrimonial"
                 },
                 description: {
                     PF: "Você ganha bem, mas gasta proporcionalmente. Se parar de trabalhar, não aguenta nem poucos meses. Vive uma vida cara sem construir patrimônio.",
                     PJ: "Empresa fatura bem mas não acumula. Gasta tudo em operação e status empresarial. Se parar de vender, quebra rápido.",
-                    HYBRID: "Você tem alta capacidade de geração de renda nos dois lados, mas não acumula patrimônio nem reservas."
+                    AUTONOMO: "Você tem alta capacidade de geração de renda, mas não acumula patrimônio nem reservas."
                 },
                 pain: {
                     PF: "Você tem uma falsa sensação de segurança PERIGOSÍSSIMA. Amigos acham que você está bem, mas você sabe que está na corda bamba.",
                     PJ: "A empresa parece próspera por fora, mas internamente vive no limite. Um mês sem faturamento seria catastrófico.",
-                    HYBRID: "Dupla falsa sensação de segurança: parecem prósperos mas estão vulneráveis nos dois lados."
+                    AUTONOMO: "Falsa sensação de segurança: parece próspero mas está vulnerável nos dois lados."
                 },
                 solution: {
-                    PF: "Precisa converter alta renda em patrimônio sólido através de investimentos inteligentes e controle de lifestyle inflation.",
-                    PJ: "Necessita transformar alto faturamento em lucro real, reservas empresariais e distribuição de dividendos.",
-                    HYBRID: "Requer otimização da alta capacidade de geração de renda para construção de patrimônio sólido integrado."
-                },
-                steps: ["Controle de lifestyle inflation", "Automatização de investimentos", "Criação de múltiplas fontes", "Construção patrimonial"]
+                    PF: "A Próspera vai te ensinar a converter sua alta renda em patrimônio sólido e reservas de emergência.",
+                    PJ: "A Próspera pode transformar alto faturamento em lucro real e reservas empresariais sólidas.",
+                    AUTONOMO: "A Próspera pode converter sua alta capacidade de geração de renda em patrimônio sólido integrado."
+                }
             },
             7: {
                 title: "🐣 FILHOTE NO NINHO",
@@ -1054,24 +932,23 @@
                 subtitle: {
                     PF: "Sua segurança financeira depende de outros",
                     PJ: "Empresa depende de terceiros para sustentação",
-                    HYBRID: "Dependência financeira nos dois lados"
+                    AUTONOMO: "Dependência financeira total"
                 },
                 description: {
                     PF: "Você não tem autonomia financeira completa, depende do parceiro ou família para sustento ou decisões financeiras importantes.",
                     PJ: "Empresa depende de sócios, família ou investidores para capital de giro e decisões estratégicas.",
-                    HYBRID: "Você vive em dupla dependência: pessoal E empresarial de terceiros para sustentação financeira."
+                    AUTONOMO: "Você vive em dependência: pessoal E profissional de terceiros para sustentação financeira."
                 },
                 pain: {
                     PF: "Você vive com medo constante: 'E se acontecer algo com quem me sustenta?' Divórcio, doença, morte - qualquer coisa pode acabar com sua segurança.",
                     PJ: "Medo constante de perder apoio dos sócios/investidores. A empresa não sobrevive sem suporte externo.",
-                    HYBRID: "Duplo medo: perder apoio pessoal E empresarial simultaneamente. Vulnerabilidade extrema nos dois lados."
+                    AUTONOMO: "Duplo medo: perder apoio pessoal E profissional simultaneamente. Vulnerabilidade extrema nos dois lados."
                 },
                 solution: {
-                    PF: "Precisa desenvolver habilidades e fontes de renda próprias para conquistar independência financeira e dignidade pessoal.",
-                    PJ: "Necessita criar sustentabilidade própria da empresa, reduzindo dependência de capital externo através de eficiência operacional.",
-                    HYBRID: "Requer desenvolvimento de independência financeira gradual nos dois lados, criando autonomia sustentável."
-                },
-                steps: ["Desenvolvimento de habilidades", "Criação de renda própria", "Redução gradual de dependência", "Construção de autonomia"]
+                    PF: "A Próspera pode te dar as ferramentas para conquistar independência financeira e dignidade pessoal.",
+                    PJ: "A Próspera pode criar um plano para sua empresa conquistar independência de capital e sustentabilidade própria.",
+                    AUTONOMO: "A Próspera pode criar um plano integrado de independência financeira pessoal e profissional."
+                }
             },
             8: {
                 title: "🦉 CORUJINHA TÍMIDA",
@@ -1079,24 +956,23 @@
                 subtitle: {
                     PF: "Tem dinheiro mas está travado pelo medo",
                     PJ: "Empresa tem capital mas paralisia de investimento",
-                    HYBRID: "Recursos disponíveis mas paralisado nos dois lados"
+                    AUTONOMO: "Recursos disponíveis mas paralisado"
                 },
                 description: {
                     PF: "Você conseguiu acumular recursos, mas está paralisado pelo medo de investir. Fica na análise eterna sem nunca agir.",
                     PJ: "A empresa tem caixa mas não investe por medo. Paralisia por excesso de análise e falta de ação estratégica.",
-                    HYBRID: "Você tem recursos nos dois lados mas está paralisado pelo medo de tomar decisões de investimento."
+                    AUTONOMO: "Você tem recursos mas está paralisado pelo medo de tomar decisões de investimento."
                 },
                 pain: {
                     PF: "Você sente uma frustração CONSTANTE de saber que deveria fazer algo com seu dinheiro, mas a paralisia te impede.",
                     PJ: "Frustração de ver oportunidades passarem enquanto a empresa fica parada por excesso de cautela e análise.",
-                    HYBRID: "Dupla frustração: oportunidades perdidas tanto pessoais quanto empresariais por paralisia excessiva."
+                    AUTONOMO: "Dupla frustração: oportunidades perdidas tanto pessoais quanto profissionais por paralisia excessiva."
                 },
                 solution: {
-                    PF: "Precisa de confiança e metodologia simples para começar a investir de forma segura, superando a paralisia por análise.",
-                    PJ: "Necessita de critérios objetivos de investimento que reduzam incertezas e facilitem tomada de decisão empresarial.",
-                    HYBRID: "Requer framework de decisão estruturado que dê segurança para investir e crescer nos dois lados."
-                },
-                steps: ["Superação da paralisia", "Critérios de decisão", "Primeiros passos seguros", "Construção de confiança"]
+                    PF: "A Próspera vai te dar confiança e um plano simples para começar a investir de forma segura e inteligente.",
+                    PJ: "A Próspera pode criar critérios objetivos de investimento que reduzam o medo e aumentem a ação empresarial.",
+                    AUTONOMO: "A Próspera pode criar um framework de decisão que dê segurança para investir nos dois lados."
+                }
             },
             9: {
                 title: "🐜 FORMIGUINHA INCANSÁVEL",
@@ -1104,24 +980,23 @@
                 subtitle: {
                     PF: "Trabalha muito, gasta tudo, não constrói nada",
                     PJ: "Empresa trabalha muito, reinveste tudo, não acumula",
-                    HYBRID: "Trabalho excessivo sem acumulação patrimonial"
+                    AUTONOMO: "Trabalho excessivo sem acumulação patrimonial"
                 },
                 description: {
                     PF: "Você foca apenas em ganhar mais como solução, mas usa toda renda extra para sustentar um estilo de vida caro e impressionar outros.",
                     PJ: "Empresa foca só em faturar mais, mas reinveste tudo em operação/crescimento sem formar reservas ou distribuir lucros.",
-                    HYBRID: "Você trabalha excessivamente nos dois lados mas não acumula patrimônio nem reservas."
+                    AUTONOMO: "Você trabalha excessivamente mas não acumula patrimônio nem reservas."
                 },
                 pain: {
                     PF: "Você está se MATANDO de trabalhar para sustentar aparências. Trabalha mais de 12h por dia mas seu patrimônio não cresce.",
                     PJ: "A empresa consome toda energia dos sócios. Fatura muito mas não gera riqueza real para os proprietários.",
-                    HYBRID: "Você vive uma dupla exaustão: trabalho pessoal E empresarial intenso sem acumulação patrimonial real."
+                    AUTONOMO: "Você vive uma exaustão constante: trabalho intenso sem acumulação patrimonial real."
                 },
                 solution: {
-                    PF: "Precisa trabalhar de forma mais inteligente, focando em eficiência e conversão de esforço em patrimônio ao invés de aparências.",
-                    PJ: "Necessita criar sistemas para que a empresa gere riqueza real para os sócios, não apenas movimento financeiro.",
-                    HYBRID: "Requer otimização do trabalho nos dois lados com foco na construção de patrimônio duradouro."
-                },
-                steps: ["Otimização de produtividade", "Foco em patrimônio vs aparência", "Sistemas de acumulação", "Trabalho inteligente"]
+                    PF: "A Próspera pode te ensinar a trabalhar de forma mais inteligente e converter esforço em patrimônio real.",
+                    PJ: "A Próspera pode criar sistemas para sua empresa gerar riqueza real para os sócios, não apenas faturamento.",
+                    AUTONOMO: "A Próspera pode otimizar seu trabalho focando em acumulação patrimonial sustentável."
+                }
             },
             10: {
                 title: "🤖 ROBÔ ORGANIZADINHO",
@@ -1129,52 +1004,47 @@
                 subtitle: {
                     PF: "Tem controle mas não tem estratégia",
                     PJ: "Empresa organizada mas sem visão",
-                    HYBRID: "Organização sem estratégia integrada"
+                    AUTONOMO: "Organização sem estratégia"
                 },
                 description: {
                     PF: "Você controla bem seus gastos, tem planilhas organizadas, mas não tem objetivos claros nem estratégia de crescimento patrimonial.",
                     PJ: "A empresa tem boa gestão financeira e controles, mas falta visão estratégica e planos de crescimento sustentável.",
-                    HYBRID: "Você é organizado nos dois lados, mas sem uma estratégia integrada que maximize o potencial conjunto."
+                    AUTONOMO: "Você é organizado, mas sem uma estratégia integrada que maximize o potencial."
                 },
                 pain: {
                     PF: "Você tem a sensação frustrante de estar 'fazendo tudo certo' mas não está saindo do lugar nem crescendo patrimônio.",
                     PJ: "A empresa está bem gerida mas estagnou. Não consegue dar o próximo passo para crescimento exponencial.",
-                    HYBRID: "Dupla frustração: organização sem progressão real tanto pessoal quanto empresarial."
+                    AUTONOMO: "Frustração: organização sem progressão real."
                 },
                 solution: {
-                    PF: "Precisa transformar organização em estratégia de crescimento patrimonial acelerado com objetivos claros e mensuráveis.",
-                    PJ: "Necessita elevar a empresa organizada a um patamar estratégico de crescimento sustentável e escalável.",
-                    HYBRID: "Requer criação de estratégia integrada que maximize o potencial organizado dos dois lados simultaneamente."
-                },
-                steps: ["Definição de objetivos claros", "Estratégia de crescimento", "Maximização de sinergias", "Aceleração patrimonial"]
+                    PF: "A Próspera pode transformar sua organização em estratégia de crescimento patrimonial acelerado.",
+                    PJ: "A Próspera pode elevar sua empresa organizada a um patamar estratégico de crescimento sustentável.",
+                    AUTONOMO: "A Próspera pode criar uma estratégia integrada que maximize seu potencial organizado."
+                }
             }
         };
 
         // Opções de renda por segmento
         const incomeOptions = {
             PF: [
-                "Até R$ 2.000",
-                "R$ 2.001 - R$ 4.000",
-                "R$ 4.001 - R$ 7.000", 
-                "R$ 7.001 - R$ 12.000",
-                "R$ 12.001 - R$ 20.000",
-                "Mais de R$ 20.000"
+                "Até R$ 3.000",
+                "R$ 3.001 - R$ 5.000",
+                "R$ 5.001 - R$ 10.000",
+                "R$ 10.001 - R$ 20.000",
+                "Acima de R$ 20.000"
             ],
             PJ: [
                 "Até R$ 10.000/mês",
-                "R$ 10.001 - R$ 30.000/mês",
-                "R$ 30.001 - R$ 60.000/mês",
-                "R$ 60.001 - R$ 120.000/mês",
-                "R$ 120.001 - R$ 300.000/mês",
-                "Mais de R$ 300.000/mês"
+                "R$ 10.000 - R$ 50.000/mês",
+                "R$ 50.000 - R$ 200.000/mês",
+                "Acima de R$ 200.000/mês"
             ],
-            HYBRID: [
-                "Até R$ 15.000/mês total",
-                "R$ 15.001 - R$ 40.000/mês total",
-                "R$ 40.001 - R$ 80.000/mês total",
-                "R$ 80.001 - R$ 150.000/mês total",
-                "R$ 150.001 - R$ 400.000/mês total",
-                "Mais de R$ 400.000/mês total"
+            AUTONOMO: [
+                "Até R$ 3.000",
+                "R$ 3.001 - R$ 5.000",
+                "R$ 5.001 - R$ 10.000",
+                "R$ 10.001 - R$ 20.000",
+                "Acima de R$ 20.000"
             ]
         };
 
@@ -1189,8 +1059,8 @@
                 currentSegment = segment;
                 const options = incomeOptions[segment];
                 const label = segment === 'PF' ? 'Renda Mensal*' : 
-                             segment === 'PJ' ? 'Faturamento Mensal*' : 
-                             'Receita Total Mensal*';
+                             segment === 'PJ' ? 'Faturamento Médio Mensal*' : 
+                             'Receita Mensal*';
                 
                 incomeLabel.textContent = label;
                 
@@ -1210,14 +1080,16 @@
             const segment = document.getElementById('segment').value;
             const age = document.getElementById('age').value;
             const income = document.getElementById('income').value;
+            const authorization = document.getElementById('authorization').checked;
+            const followUp = document.getElementById('followUp').value;
 
-            if (!name || !email || !phone || !segment || !age || !income) {
-                alert('Por favor, preencha todos os campos obrigatórios.');
+            if (!name || !email || !phone || !segment || !age || !income || !authorization) {
+                alert('Por favor, preencha todos os campos obrigatórios e aceite a autorização.');
                 return;
             }
 
             currentUser = {
-                name, email, phone, segment, age, income,
+                name, email, phone, segment, age, income, followUp,
                 timestamp: new Date().toLocaleString()
             };
 
@@ -1234,18 +1106,42 @@
             const question = questions[currentQuestionIndex];
             const segment = currentUser.segment;
             
+            const questionText = typeof question.question === 'object' 
+                ? question.question[segment] || question.question.PF 
+                : question.question;
+            
+            const optionsList = typeof question.options === 'object' && question.options[segment] 
+                ? question.options[segment] 
+                : question.options;
+
+            let sectionHtml = '';
+            if (currentQuestionIndex === 0 || questions[currentQuestionIndex].section !== questions[currentQuestionIndex - 1]?.section) {
+                sectionHtml = `<div class="section-title">${question.section}</div>`;
+            }
+            
             container.innerHTML = `
+                ${sectionHtml}
                 <div class="question-container active">
-                    <div class="question">${question.question[segment]}</div>
+                    <div class="question">${questionText}</div>
                     <div class="options" id="options-${currentQuestionIndex}">
-                        ${question.options[segment].map((option, index) => 
-                            `<div class="option" onclick="selectOption(${currentQuestionIndex}, ${index})" data-profile="${option.profile}">
+                        ${optionsList.map((option, index) => 
+                            `<div class="option" onclick="selectOption(${currentQuestionIndex}, ${index})" data-points="${option.points}">
                                 ${option.text}
                             </div>`
                         ).join('')}
                     </div>
                 </div>
             `;
+            
+            if (userAnswers[currentQuestionIndex] !== undefined) {
+                const points = userAnswers[currentQuestionIndex];
+                const options = document.querySelectorAll(`#options-${currentQuestionIndex} .option`);
+                options.forEach(option => {
+                    if (parseInt(option.dataset.points) === points) {
+                        option.classList.add('selected');
+                    }
+                });
+            }
             
             updateProgress();
             updateNavButtons();
@@ -1258,37 +1154,10 @@
             const selectedOption = options[optionIndex];
             selectedOption.classList.add('selected');
             
-            const profile = parseInt(selectedOption.dataset.profile);
-            userAnswers[questionIndex] = profile;
+            const points = parseInt(selectedOption.dataset.points);
+            userAnswers[questionIndex] = points;
             
             updateNavButtons();
-        }
-
-        function nextQuestion() {
-            if (currentQuestionIndex < questions.length - 1) {
-                currentQuestionIndex++;
-                showQuestion();
-            } else {
-                showResult();
-            }
-        }
-
-        function previousQuestion() {
-            if (currentQuestionIndex > 0) {
-                currentQuestionIndex--;
-                showQuestion();
-                
-                // Reselect previous answer
-                if (userAnswers[currentQuestionIndex] !== undefined) {
-                    const selectedProfile = userAnswers[currentQuestionIndex];
-                    const options = document.querySelectorAll(`#options-${currentQuestionIndex} .option`);
-                    options.forEach(option => {
-                        if (parseInt(option.dataset.profile) === selectedProfile) {
-                            option.classList.add('selected');
-                        }
-                    });
-                }
-            }
         }
 
         function updateProgress() {
@@ -1310,23 +1179,37 @@
             }
         }
 
-        function calculateProfile() {
-            const profileCounts = {};
-            userAnswers.forEach(answer => {
-                profileCounts[answer] = (profileCounts[answer] || 0) + 1;
-            });
-            
-            let maxCount = 0;
-            let dominantProfile = 1;
-            
-            for (const [profile, count] of Object.entries(profileCounts)) {
-                if (count > maxCount) {
-                    maxCount = count;
-                    dominantProfile = parseInt(profile);
-                }
+        function nextQuestion() {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                showQuestion();
+            } else {
+                showResult();
             }
-            
-            return dominantProfile;
+        }
+
+        function previousQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion();
+            }
+        }
+
+        function calculateProfile() {
+            const totalPoints = userAnswers.reduce((sum, points) => sum + points, 0);
+            const maxPoints = questions.length * 3;
+            const riskPercentage = (totalPoints / maxPoints) * 100;
+
+            if (riskPercentage >= 80) return 1;
+            if (riskPercentage >= 70) return 2;
+            if (riskPercentage >= 60) return 3;
+            if (riskPercentage >= 50) return 4;
+            if (riskPercentage >= 40) return 7;
+            if (riskPercentage >= 30) return 9;
+            if (riskPercentage >= 20) return 6;
+            if (riskPercentage >= 15) return 8;
+            if (riskPercentage >= 10) return 5;
+            return 10;
         }
 
         function showResult() {
@@ -1334,21 +1217,17 @@
             const profile = profiles[profileId];
             const segment = currentUser.segment;
             
-            // Save data
             const userData = {
                 ...currentUser,
                 profileId,
                 profileTitle: profile.title,
                 answers: userAnswers,
+                totalPoints: userAnswers.reduce((sum, points) => sum + points, 0),
                 completedAt: new Date().toLocaleString()
             };
             
             diagnosticData.push(userData);
-            try {
-                localStorage.setItem('diagnosticData', JSON.stringify(diagnosticData));
-            } catch (e) {
-                console.log('Erro ao salvar dados:', e);
-            }
+            saveData();
             
             document.getElementById('quizContainer').style.display = 'none';
             document.getElementById('resultContainer').style.display = 'block';
@@ -1371,35 +1250,49 @@
                         <h4>💡 SUA SOLUÇÃO:</h4>
                         <p>${profile.solution[segment]}</p>
                     </div>
-                    
-                    <div class="steps-container">
-                        <h4>🎯 PRÓXIMOS PASSOS RECOMENDADOS:</h4>
-                        <div class="steps-grid">
-                            ${profile.steps.map((step, index) => `
-                                <div class="step-card">
-                                    <div class="step-number">${index + 1}</div>
-                                    <div>${step}</div>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
+                </div>
+                
+                <div class="cta-section">
+                    <h3>🎯 PRÓXIMO PASSO</h3>
+                    <p>Agora que você conhece sua verdade financeira, é hora de agir! A Próspera tem a solução específica para seu perfil ${profile.title}.</p>
+                    <button class="cta-btn" onclick="scheduleConsultation()">
+                        QUERO TRANSFORMAR MINHA VIDA FINANCEIRA
+                    </button>
+                    <small style="display: block; margin-top: 10px; opacity: 0.7;">
+                        Consultoria gratuita de 30 minutos para traçar seu plano personalizado
+                    </small>
                 </div>
             `;
             
             document.getElementById('resultContent').innerHTML = resultContent;
         }
 
+        function scheduleConsultation() {
+            const profileId = calculateProfile();
+            const profile = profiles[profileId];
+            const message = `Olá! Acabei de fazer o Diagnóstico Financeiro e descobri que sou do perfil "${profile.title}". Gostaria de agendar uma consultoria gratuita para entender como a Próspera pode me ajudar a transformar minha situação financeira.
+
+Meus dados:
+Nome: ${currentUser.name}
+Segmento: ${currentUser.segment}
+Perfil: ${profile.title}`;
+
+            const whatsappUrl = `https://wa.me/5534999999999?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
         function restartQuiz() {
             document.getElementById('resultContainer').style.display = 'none';
             document.getElementById('initialForm').style.display = 'block';
             
-            // Reset form
             document.getElementById('name').value = '';
             document.getElementById('email').value = '';
             document.getElementById('phone').value = '';
             document.getElementById('segment').value = '';
             document.getElementById('age').value = '';
             document.getElementById('income').innerHTML = '<option value="">Selecione</option>';
+            document.getElementById('authorization').checked = false;
+            document.getElementById('followUp').value = '';
             document.getElementById('adminCode').value = '';
             document.getElementById('adminPanel').style.display = 'none';
             
@@ -1408,7 +1301,6 @@
             currentUser = {};
         }
 
-        // Admin functions
         function checkAdminCode() {
             const code = document.getElementById('adminCode').value.trim();
             const adminPanel = document.getElementById('adminPanel');
@@ -1417,18 +1309,12 @@
             if (code === 'PROSPERAADMIN2024') {
                 adminPanel.style.display = 'block';
                 adminInput.classList.add('admin-valid');
-                adminInput.style.borderColor = '#52B788';
-                adminInput.style.backgroundColor = '#d8f3dc';
             } else if (code === '') {
                 adminPanel.style.display = 'none';
                 adminInput.classList.remove('admin-valid');
-                adminInput.style.borderColor = '#ddd';
-                adminInput.style.backgroundColor = '#f8f9fa';
             } else {
                 adminPanel.style.display = 'none';
                 adminInput.classList.remove('admin-valid');
-                adminInput.style.borderColor = '#ff6b6b';
-                adminInput.style.backgroundColor = '#fff5f5';
             }
         }
 
@@ -1436,253 +1322,59 @@
             document.getElementById('adminPanel').style.display = 'none';
             document.getElementById('adminCode').value = '';
             document.getElementById('adminCode').classList.remove('admin-valid');
-            document.getElementById('adminCode').style.borderColor = '#ddd';
-            document.getElementById('adminCode').style.backgroundColor = '#f8f9fa';
         }
 
         function showStats() {
             const data = diagnosticData;
             const totalUsers = data.length;
             
-            // Estatísticas por segmento
-            const segmentStats = { PF: 0, PJ: 0, HYBRID: 0 };
+            if (totalUsers === 0) {
+                document.getElementById('statsContainer').innerHTML = `
+                    <div style="text-align: center; padding: 30px; color: #666; background: white; border-radius: 12px; margin-top: 20px;">
+                        <h3>📊 Estatísticas</h3>
+                        <p style="margin: 20px 0;">Nenhum diagnóstico realizado ainda.</p>
+                        <small>Os dados aparecerão aqui conforme os usuários completarem o diagnóstico.</small>
+                    </div>
+                `;
+                return;
+            }
+            
+            const segmentStats = { PF: 0, PJ: 0, AUTONOMO: 0 };
             const profileStats = {};
-            const ageStats = {};
-            const incomeStats = {};
             
             data.forEach(user => {
-                segmentStats[user.segment]++;
+                if (user.segment) {
+                    segmentStats[user.segment] = (segmentStats[user.segment] || 0) + 1;
+                }
                 
-                const profileTitle = user.profileTitle;
+                const profileTitle = user.profileTitle || 'Perfil não identificado';
                 profileStats[profileTitle] = (profileStats[profileTitle] || 0) + 1;
-                
-                ageStats[user.age] = (ageStats[user.age] || 0) + 1;
-                incomeStats[user.income] = (incomeStats[user.income] || 0) + 1;
             });
             
             let statsHtml = `
+                <h3 style="margin-top: 20px; color: #2c3e50;">📊 ESTATÍSTICAS GERAIS</h3>
                 <div class="stats-grid">
                     <div class="stat-card">
                         <h4>${totalUsers}</h4>
                         <small>Total de Diagnósticos</small>
                     </div>
                     <div class="stat-card">
-                        <h4>${segmentStats.PF}</h4>
+                        <h4>${segmentStats.PF || 0}</h4>
                         <small>Pessoa Física</small>
                     </div>
                     <div class="stat-card">
-                        <h4>${segmentStats.PJ}</h4>
+                        <h4>${segmentStats.PJ || 0}</h4>
                         <small>Pessoa Jurídica</small>
                     </div>
                     <div class="stat-card">
-                        <h4>${segmentStats.HYBRID}</h4>
-                        <small>Híbrido</small>
+                        <h4>${segmentStats.AUTONOMO || 0}</h4>
+                        <small>Autônomo</small>
                     </div>
                 </div>
                 
-                <h4 style="margin-top: 20px;">📊 Perfis Mais Comuns:</h4>
-                <div style="background: white; padding: 15px; border-radius: 8px; margin-top: 10px;">
+                <h4 style="margin-top: 25px; color: #2c3e50;">🐾 Perfis Mais Comuns:</h4>
+                <div class="profile-list">
             `;
             
-            Object.entries(profileStats)
-                .sort(([,a], [,b]) => b - a)
-                .slice(0, 5)
-                .forEach(([profile, count]) => {
-                    const percentage = totalUsers > 0 ? ((count / totalUsers) * 100).toFixed(1) : '0.0';
-                    statsHtml += `<div style="margin: 5px 0;">${profile}: ${count} (${percentage}%)</div>`;
-                });
-            
-            statsHtml += '</div>';
-            
-            document.getElementById('statsContainer').innerHTML = statsHtml;
-        }
-
-        function generateProfileReport() {
-            const data = diagnosticData;
-            let report = '';
-            
-            // Cabeçalho do relatório
-            report += '╔═══════════════════════════════════════════════════════════════════════════╗\n';
-            report += '║                    RELATÓRIO DE PERFIS FINANCEIROS                       ║\n';
-            report += '║                        DIAGNÓSTICO COMPLETO                              ║\n';
-            report += '╚═══════════════════════════════════════════════════════════════════════════╝\n\n';
-            
-            report += `📅 Data do Relatório: ${new Date().toLocaleDateString('pt-BR')}\n`;
-            report += `👥 Total de Participantes: ${data.length}\n\n`;
-            
-            // Estatísticas gerais
-            const segmentStats = { PF: 0, PJ: 0, HYBRID: 0 };
-            const profileStats = {};
-            const ageStats = {};
-            
-            data.forEach(user => {
-                segmentStats[user.segment]++;
-                profileStats[user.profileTitle] = (profileStats[user.profileTitle] || 0) + 1;
-                ageStats[user.age] = (ageStats[user.age] || 0) + 1;
-            });
-            
-            report += '┌───────────────────────────────────────────────────────────────────────────┐\n';
-            report += '│                           ESTATÍSTICAS GERAIS                          │\n';
-            report += '└───────────────────────────────────────────────────────────────────────────┘\n\n';
-            
-            report += '🎯 DISTRIBUIÇÃO POR SEGMENTO:\n';
-            report += `   • Pessoa Física (PF): ${segmentStats.PF} (${((segmentStats.PF/data.length)*100).toFixed(1)}%)\n`;
-            report += `   • Pessoa Jurídica (PJ): ${segmentStats.PJ} (${((segmentStats.PJ/data.length)*100).toFixed(1)}%)\n`;
-            report += `   • Híbrido (PF+PJ): ${segmentStats.HYBRID} (${((segmentStats.HYBRID/data.length)*100).toFixed(1)}%)\n\n`;
-            
-            report += '📢 DISTRIBUIÇÃO POR FAIXA ETÁRIA:\n';
-            Object.entries(ageStats).forEach(([age, count]) => {
-                report += `   • ${age}: ${count} (${((count/data.length)*100).toFixed(1)}%)\n`;
-            });
-            report += '\n';
-            
-            // Análise dos perfis
-            report += '┌───────────────────────────────────────────────────────────────────────────┐\n';
-            report += '│                        ANÁLISE DOS PERFIS                              │\n';
-            report += '└───────────────────────────────────────────────────────────────────────────┘\n\n';
-            
-            const sortedProfiles = Object.entries(profileStats).sort(([,a], [,b]) => b - a);
-            
-            sortedProfiles.forEach(([profileTitle, count], index) => {
-                const percentage = ((count / data.length) * 100).toFixed(1);
-                const profileData = Object.values(profiles).find(p => p.title === profileTitle);
-                
-                report += `${index + 1}º PERFIL MAIS COMUM:\n`;
-                report += `${profileData.emoji} ${profileTitle}\n`;
-                report += `📊 Representatividade: ${count} pessoas (${percentage}%)\n\n`;
-                
-                report += `💡 CARACTERÍSTICAS:\n`;
-                report += `   • Pessoa Física: ${profileData.subtitle.PF}\n`;
-                report += `   • Pessoa Jurídica: ${profileData.subtitle.PJ}\n`;
-                report += `   • Híbrido: ${profileData.subtitle.HYBRID}\n\n`;
-                
-                report += `🔥 DOR PRINCIPAL:\n`;
-                report += `   ${profileData.pain.PF.substring(0, 200)}...\n\n`;
-                
-                report += `💊 SOLUÇÃO RECOMENDADA:\n`;
-                report += `   ${profileData.solution.PF.substring(0, 200)}...\n\n`;
-                
-                report += `🎯 PRÓXIMOS PASSOS:\n`;
-                profileData.steps.forEach((step, stepIndex) => {
-                    report += `   ${stepIndex + 1}. ${step}\n`;
-                });
-                report += '\n';
-                report += '─'.repeat(75) + '\n\n';
-            });
-            
-            // Lista detalhada dos participantes
-            report += '┌───────────────────────────────────────────────────────────────────────────┐\n';
-            report += '│                     LISTA DETALHADA DE PARTICIPANTES                   │\n';
-            report += '└───────────────────────────────────────────────────────────────────────────┘\n\n';
-            
-            data.forEach((user, index) => {
-                const profileData = profiles[user.profileId];
-                const segmentBadge = user.segment === 'PF' ? '🏠 PF' : 
-                                   user.segment === 'PJ' ? '🏢 PJ' : '👨‍💼 HYBRID';
-                
-                report += `${String(index + 1).padStart(3, '0')}. ${user.name}\n`;
-                report += `     📧 ${user.email}\n`;
-                report += `     📱 ${user.phone}\n`;
-                report += `     ${segmentBadge} | 🎂 ${user.age} | 💰 ${user.income}\n`;
-                report += `     ${profileData.emoji} ${user.profileTitle}\n`;
-                report += `     📅 Completou em: ${user.completedAt}\n`;
-                report += `     🎯 Perfil ID: ${user.profileId}\n\n`;
-            });
-            
-            // Insights e recomendações
-            report += '┌───────────────────────────────────────────────────────────────────────────┐\n';
-            report += '│                        INSIGHTS E RECOMENDAÇÕES                        │\n';
-            report += '└───────────────────────────────────────────────────────────────────────────┘\n\n';
-            
-            const topProfile = sortedProfiles[0];
-            const topProfileData = Object.values(profiles).find(p => p.title === topProfile[0]);
-            
-            report += `📈 PERFIL DOMINANTE: ${topProfile[0]} (${((topProfile[1]/data.length)*100).toFixed(1)}%)\n\n`;
-            
-            report += `🎯 ESTRATÉGIAS RECOMENDADAS PARA O GRUPO:\n`;
-            report += `   1. Foco na educação financeira básica\n`;
-            report += `   2. Desenvolvimento de controles financeiros\n`;
-            report += `   3. Criação de reservas de emergência\n`;
-            report += `   4. Planejamento de investimentos personalizados\n`;
-            report += `   5. Acompanhamento contínuo e mentoria\n\n`;
-            
-            report += `💡 OPORTUNIDADES IDENTIFICADAS:\n`;
-            if (segmentStats.HYBRID > 0) {
-                report += `   • ${segmentStats.HYBRID} pessoas com perfil híbrido precisam de integração PF/PJ\n`;
-            }
-            if (segmentStats.PF > segmentStats.PJ) {
-                report += `   • Foco maior em soluções para Pessoa Física\n`;
-            } else {
-                report += `   • Foco maior em soluções empresariais\n`;
-            }
-            
-            report += '\n';
-            report += '═'.repeat(75) + '\n';
-            report += `📊 Relatório gerado automaticamente pelo Sistema de Diagnóstico Financeiro\n`;
-            report += `🕒 ${new Date().toLocaleString('pt-BR')}\n`;
-            report += '═'.repeat(75);
-            
-            // Download do arquivo
-            const blob = new Blob([report], { type: 'text/plain; charset=utf-8' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `relatorio_perfis_completo_${new Date().toISOString().split('T')[0]}.txt`;
-            a.click();
-            URL.revokeObjectURL(url);
-        }
-
-        function exportData() {
-            const data = JSON.stringify(diagnosticData, null, 2);
-            const blob = new Blob([data], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `dados_diagnostico_${new Date().toISOString().split('T')[0]}.json`;
-            a.click();
-            URL.revokeObjectURL(url);
-        }
-
-        function generateQRCode() {
-            const currentUrl = window.location.href;
-            const qrData = {
-                url: currentUrl,
-                title: 'Diagnóstico Financeiro PF & PJ',
-                description: 'Descubra sua verdade financeira'
-            };
-            
-            alert(`QR Code e Link de Compartilhamento:
-
-URL: ${currentUrl}
-
-Para gerar QR Code, use um gerador online com esta URL.
-
-Título sugerido: "Diagnóstico Financeiro PF & PJ"
-Descrição: "Descubra a verdade sobre sua vida financeira"
-
-Total de diagnósticos realizados: ${diagnosticData.length}`);
-        }
-
-        function clearData() {
-            if (confirm('ATENÇÃO: Esta ação irá apagar TODOS os dados salvos. Tem certeza?')) {
-                if (confirm('CONFIRMAÇÃO FINAL: Todos os diagnósticos serão perdidos. Continuar?')) {
-                    try {
-                        localStorage.removeItem('diagnosticData');
-                        diagnosticData = [];
-                        alert('Base de dados limpa com sucesso!');
-                        document.getElementById('statsContainer').innerHTML = '';
-                    } catch (e) {
-                        console.log('Erro ao limpar dados:', e);
-                        alert('Erro ao limpar dados. Tente novamente.');
-                    }
-                }
-            }
-        }
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            updateIncomeOptions();
-        });
-    </script>
-</body>
-</html>
+            const sortedProfiles = Object.entries(profileStats)
+                .sort(([,a], [,b])
